@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Bodoni Moda', serif;
+    --font-body: 'Jost', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: #1C1917;
+    background-color: #FAFAF9;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply max-w-7xl mx-auto px-5 md:px-8;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl shadow-glass;
+  }
+
+  .glass-card-dark {
+    @apply bg-bark/80 backdrop-blur-xl border border-white/10 rounded-3xl shadow-glass;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-forest text-white font-semibold rounded-full
+           hover:bg-forest-dark transition-all duration-300 hover:shadow-forest cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border-2 border-forest text-forest font-semibold rounded-full
+           hover:bg-forest hover:text-white transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-white font-semibold rounded-full
+           hover:bg-gold-light transition-all duration-300 cursor-pointer;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
+           bg-forest/10 text-forest border border-forest/20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-forest to-forest-muted bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
